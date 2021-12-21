@@ -1,6 +1,6 @@
 {
-  "name": "737efb",
-  "productName": "737efb",
+  "name": "NG Perf",
+  "productName": "NG Perf",
   "version": "1.0.0",
   "description": "My Electron application description",
   "main": ".webpack/main",
@@ -24,7 +24,7 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "737efb"
+            "name": "NG Perf"
           }
         },
         {

@@ -4,12 +4,25 @@ body {
   margin: auto;
   max-width: 38rem;
   padding: 2rem;
-  background-color: #2f3c4d;
+  background-color: #272b30;
   -webkit-app-region: drag;
   -webkit-user-select: none;
 }
 
-.intro {
-  color: rgb(193, 215, 224);
-  text-shadow: 3px 3px rgba(0, 0, 0, 0.281);
+.welcome-div {
+  background-color: rgba(24, 24, 32, 0.425);
+  border-left: 15px solid rgb(48, 60, 68);
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  margin: auto;
+}
+.welcome {
+  color: rgb(255, 255, 255);
+}
+
+.booton {
+  position: relative;
+  top: 100px;
 }
