@@ -1,0 +1,15 @@
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif;
+  margin: auto;
+  max-width: 38rem;
+  padding: 2rem;
+  background-color: #2f3c4d;
+  -webkit-app-region: drag;
+  -webkit-user-select: none;
+}
+
+.intro {
+  color: rgb(193, 215, 224);
+  text-shadow: 3px 3px rgba(0, 0, 0, 0.281);
+}
