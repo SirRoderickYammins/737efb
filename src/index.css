@@ -22,18 +22,8 @@ body {
   color: rgb(255, 255, 255);
 }
 
-.airframe-select {
-  position: relative;
-  top: 100px;
-}
-
-.zfw {
-  color: rgb(255, 255, 255);
-}
-
 .info {
   position: absolute;
-  border: solid; 
-  left: 20px;
   top: 100px;
+  color: rgb(255, 255, 255);
 }

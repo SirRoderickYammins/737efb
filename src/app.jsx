@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useState } from "react";
 import * as ReactDOM from "react-dom";
 
 function WelcomeText() {
@@ -9,60 +9,52 @@ function WelcomeText() {
   );
 }
 
-function VariantSelect(props) {
+function Calculator(props) {
   return (
-    <div className="plane-select">
-      <p>Select your airframe:</p>
-      <select>
-        <option value="600">{props.variants[0]}</option>
-        <option value="700">{props.variants[1]}</option>
-        <option value="800">{props.variants[2]}</option>
-        <option value="900">{props.variants[3]}</option>
-      </select>
+    <div>
+      <p>temp is {props.newTemp}</p>
+      <p>TOW is {props.newTOW}</p>
     </div>
   );
 }
 
-class DataEntry extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+function EntryFields() {
+  const [temperature, newTemp] = useState(0);
+  const [tow, newTOW] = useState(0);
+  const [isCalculationShown, setCalculationShown] = useState(false);
 
-  render() {
-    const variants = ["737-600", "737-700", "737-800", "737-900"];
-    return (
-      <div className="info">
-        <div>
-          <VariantSelect variants={variants} />
-        </div>
-        <div className="zfw">ZFW</div>
-        <div className="runway-cond">Runway Condtions</div>
-        <div className="runway-length">Runway Length</div>
-      </div>
-    );
-  }
+  const handleCalculation = (e) => {
+    e.preventDefault();
+
+    setCalculationShown(true);
+  };
+
+  return (
+    <div className="info">
+      <legend>OAT (°C) </legend>
+      <input
+        value={temperature}
+        onChange={(e) => newTemp(e.target.value)}
+      ></input>
+      <legend> Take-off Weight (1000s of KGs) </legend>
+      <input value={tow} onChange={(e) => newTOW(e.target.value)}></input>
+      <legend> Wind (Deg/kn) </legend>
+      <input value={tow}></input>
+      <button onClick={handleCalculation}>Calc</button>
+      {isCalculationShown && <Calculator newTemp={temperature} newTOW={tow} />}
+    </div>
+  );
 }
 
-class App extends React.Component {
-  constructor(props) {
-    super(props);
+function App() {
+  const [count, setCount] = useState(0);
 
-    this.state = { plane: "" };
-  }
-
-  handleVariants(e) {
-    this.setState(plane);
-    console.log("Button click was registered.");
-  }
-
-  render() {
-    return (
-      <div>
-        <WelcomeText />
-        <DataEntry />
-      </div>
-    );
-  }
+  return (
+    <div>
+      <WelcomeText />
+      <EntryFields />
+    </div>
+  );
 }
 
 ReactDOM.render(<App />, document.getElementById("root"));
