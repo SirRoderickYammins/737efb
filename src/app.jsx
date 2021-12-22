@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import * as ReactDOM from "react-dom";
 import Calculator from "./calculation.jsx";
+import GetMetar from "./metar.jsx";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Stack from "react-bootstrap/Stack";
@@ -27,6 +28,14 @@ function EntryFields() {
     setCalculationShown(true);
   };
 
+  const handleInput = (e) => {
+    e.preventDefault();
+    if (e >= 0) {
+      return value;
+    }
+    return 0;
+  };
+
   return (
     <Container className="cont-field">
       <div className="info">
@@ -39,13 +48,14 @@ function EntryFields() {
           ></input>
           <legend> Take-off Weight (1000s of KGs) </legend>
           <input
+            min={0}
             type="number"
-            value={tow}
             onChange={(e) => newTOW(e.target.value)}
           ></input>
           <legend> Wind (Deg/kn) </legend>
           <input
             value={wind}
+            min={0}
             maxLength={6}
             onChange={(e) => newWind(e.target.value)}
           ></input>
@@ -85,6 +95,7 @@ function App() {
     <div>
       <WelcomeText />
       <EntryFields />
+      <GetMetar />
     </div>
   );
 }
