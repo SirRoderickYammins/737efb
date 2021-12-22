@@ -28,7 +28,7 @@ function EntryFields() {
   };
 
   return (
-    <Container>
+    <Container className="cont-field">
       <div className="info">
         <Stack gap={3}>
           <legend>OAT (°C) </legend>
@@ -50,8 +50,15 @@ function EntryFields() {
             maxLength={3}
             onChange={(e) => setRWAYHDG(e.target.value)}
           ></input>
-          <Button variant="primary" onClick={handleCalculation}>
-            Calc
+          <Button
+            disabled={isCalculationShown}
+            variant="primary"
+            onClick={handleCalculation}
+          >
+            Calculate
+          </Button>
+          <Button variant="danger" onClick={() => setCalculationShown(false)}>
+            Clear
           </Button>
           {isCalculationShown && (
             <Calculator

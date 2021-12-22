@@ -4,7 +4,6 @@ body {
   margin: auto;
   max-width: 38rem;
   padding: 2rem;
-  background-color: #272b30;
   -webkit-app-region: drag;
   -webkit-user-select: none;
 }
@@ -23,6 +22,16 @@ body {
 }
 
 .info {
+  top: 300px;
+  color: rgb(185, 185, 185);
+  width: 500px;
+  margin-right: auto;
+}
+
+.cont-field {
+  position: absolute;
+  background-color: #272b30;
   top: 100px;
-  color: rgb(32, 32, 32);
+  margin-right: auto;
+  padding-bottom: 2%;
 }
