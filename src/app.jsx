@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import * as ReactDOM from "react-dom";
+import Calculator from "./calculation.jsx";
 
 function WelcomeText() {
   return (
@@ -9,18 +10,11 @@ function WelcomeText() {
   );
 }
 
-function Calculator(props) {
-  return (
-    <div>
-      <p>temp is {props.newTemp}</p>
-      <p>TOW is {props.newTOW}</p>
-    </div>
-  );
-}
-
 function EntryFields() {
   const [temperature, newTemp] = useState(0);
   const [tow, newTOW] = useState(0);
+  const [wind, newWind] = useState(0);
+  const [rwyHDG, setRWAYHDG] = useState(0);
   const [isCalculationShown, setCalculationShown] = useState(false);
 
   const handleCalculation = (e) => {
@@ -36,16 +30,23 @@ function EntryFields() {
       <legend> Take-off Weight (1000s of KGs) </legend>
       <input onChange={(e) => newTOW(e.target.value)}></input>
       <legend> Wind (Deg/kn) </legend>
-      <input></input>
+      <input onChange={(e) => newWind(e.target.value)}></input>
+      <legend> Runway Heading (Deg)</legend>
+      <input onChange={(e) => setRWAYHDG(e.target.value)}></input>
       <button onClick={handleCalculation}>Calc</button>
-      {isCalculationShown && <Calculator newTemp={temperature} newTOW={tow} />}
+      {isCalculationShown && (
+        <Calculator
+          newTemp={temperature}
+          newTOW={tow}
+          newWind={wind}
+          rwyHDG={rwyHDG}
+        />
+      )}
     </div>
   );
 }
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div>
       <WelcomeText />
