@@ -32,14 +32,11 @@ function EntryFields() {
   return (
     <div className="info">
       <legend>OAT (°C) </legend>
-      <input
-        value={temperature}
-        onChange={(e) => newTemp(e.target.value)}
-      ></input>
+      <input onChange={(e) => newTemp(e.target.value)}></input>
       <legend> Take-off Weight (1000s of KGs) </legend>
-      <input value={tow} onChange={(e) => newTOW(e.target.value)}></input>
+      <input onChange={(e) => newTOW(e.target.value)}></input>
       <legend> Wind (Deg/kn) </legend>
-      <input value={tow}></input>
+      <input></input>
       <button onClick={handleCalculation}>Calc</button>
       {isCalculationShown && <Calculator newTemp={temperature} newTOW={tow} />}
     </div>
