@@ -77,7 +77,7 @@ typings/
 .serverless/
 
 #package-lock.json
-.package-lock.json
+package-lock.json
 
 # FuseBox cache
 .fusebox/
