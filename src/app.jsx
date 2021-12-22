@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import * as ReactDOM from "react-dom";
-import Calculator from "./calculation.jsx";
-import GetMetar from "./metar.jsx";
+import { Calculator, MetarWindow } from "./calculation.jsx";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Stack from "react-bootstrap/Stack";
@@ -86,6 +85,7 @@ function EntryFields() {
           )}
         </Stack>
       </div>
+      <MetarWindow />
     </Container>
   );
 }
@@ -95,7 +95,6 @@ function App() {
     <div>
       <WelcomeText />
       <EntryFields />
-      <GetMetar />
     </div>
   );
 }

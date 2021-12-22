@@ -7,7 +7,7 @@ function MetarImport() {
       console.log(data);
     })
     .catch((err) => {
-      console.error(err);
+      console.error("SHIEEET");
     });
 }
 

@@ -39,6 +39,14 @@ function WindComponentCalc(windHeading, rnwyHeading, windSpeed) {
   return windComponent;
 }
 
+function MetarWindow() {
+  return (
+    <div>
+      <p> Cracka</p>
+    </div>
+  );
+}
+
 function Calculator(props) {
   const hdgandwind = props.newWind.split("/");
   var hdg = parseInt(hdgandwind[0]);
@@ -68,4 +76,4 @@ function Calculator(props) {
   );
 }
 
-export default Calculator;
+export { Calculator, MetarWindow };
