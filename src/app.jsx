@@ -23,6 +23,26 @@ function VariantSelect(props) {
   );
 }
 
+class DataEntry extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
+  render() {
+    const variants = ["737-600", "737-700", "737-800", "737-900"];
+    return (
+      <div className="info">
+        <div>
+          <VariantSelect variants={variants} />
+        </div>
+        <div className="zfw">ZFW</div>
+        <div className="runway-cond">Runway Condtions</div>
+        <div className="runway-length">Runway Length</div>
+      </div>
+    );
+  }
+}
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -36,17 +56,10 @@ class App extends React.Component {
   }
 
   render() {
-    const variants = ["737-600", "737-700", "737-800", "737-900"];
     return (
       <div>
         <WelcomeText />
-        <div className="booton">
-          <form>
-            <button type="submit" onClick={this.handleVariants}>
-              Submit
-            </button>
-          </form>
-        </div>
+        <DataEntry />
       </div>
     );
   }

@@ -22,7 +22,18 @@ body {
   color: rgb(255, 255, 255);
 }
 
-.booton {
+.airframe-select {
   position: relative;
+  top: 100px;
+}
+
+.zfw {
+  color: rgb(255, 255, 255);
+}
+
+.info {
+  position: absolute;
+  border: solid; 
+  left: 20px;
   top: 100px;
 }
