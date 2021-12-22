@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Fade from "react-bootstrap/Fade";
 
 function DegToRad(angle) {
   return angle * (Math.PI / 180);
@@ -51,13 +52,19 @@ function Calculator(props) {
   }
 
   return (
-    <div>
-      <p>temp is {props.newTemp}</p>
-      <p>TOW is {props.newTOW}</p>
-      <p> HDG is {hdg}</p>
-      <p>Wind is {windSpeed}</p>
-      <p> Wind component is {windComponent} knots</p>
-    </div>
+    <Fade
+      in={props.isCalculationShown}
+      timeout={1500}
+      appear={props.isCalculationShown}
+    >
+      <div>
+        <p>temp is {props.newTemp}</p>
+        <p>TOW is {props.newTOW}</p>
+        <p> HDG is {hdg}</p>
+        <p>Wind is {windSpeed}</p>
+        <p> Wind component is {windComponent} knots</p>
+      </div>
+    </Fade>
   );
 }
 
