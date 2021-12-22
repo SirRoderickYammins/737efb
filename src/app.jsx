@@ -33,11 +33,16 @@ function EntryFields() {
         <Stack gap={3}>
           <legend>OAT (°C) </legend>
           <input
+            type="number"
             value={temperature}
             onChange={(e) => newTemp(e.target.value)}
           ></input>
           <legend> Take-off Weight (1000s of KGs) </legend>
-          <input value={tow} onChange={(e) => newTOW(e.target.value)}></input>
+          <input
+            type="number"
+            value={tow}
+            onChange={(e) => newTOW(e.target.value)}
+          ></input>
           <legend> Wind (Deg/kn) </legend>
           <input
             value={wind}
