@@ -5,6 +5,7 @@ import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Stack from "react-bootstrap/Stack";
 import "bootstrap/dist/css/bootstrap.min.css";
+import GetMetar from "./metar.jsx";
 
 function WelcomeText() {
   return (
@@ -95,6 +96,7 @@ function App() {
     <div>
       <WelcomeText />
       <EntryFields />
+      <GetMetar />
     </div>
   );
 }

@@ -1,18 +1,18 @@
-import { Metar } from "@flybywiresim/api-client";
 import React, { useState } from "react";
+import { Metar } from "@flybywiresim/api-client";
 
-function MetarImport() {
+function MetarAcquisition() {
   Metar.get("KBWI", "vatsim")
     .then((data) => {
-      console.log(data);
+      console.log(data.metar);
     })
     .catch((err) => {
-      console.error("SHIEEET");
+      console.error(err);
     });
 }
 
 function GetMetar() {
-  MetarImport();
+  MetarAcquisition();
   return <div className="metar"></div>;
 }
 

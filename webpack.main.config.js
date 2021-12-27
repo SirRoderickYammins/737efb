@@ -8,5 +8,9 @@ module.exports = {
   module: {
     rules: require("./webpack.rules"),
   },
+  externals: {
+    "node:util": "commonjs util",
+  },
   devServer: { historyApiFallback: true, contentBase: "./" },
+
 };
