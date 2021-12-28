@@ -46,8 +46,7 @@
         [
           "@electron-forge/plugin-webpack",
           {
-            "devContentSecurityPolicy":"default-src * self blob: data: gap:; style-src * self 'unsafe-inline' blob: data: gap:; script-src * 'self' 'unsafe-eval' 'unsafe-inline' blob: data: gap:; object-src * 'self' blob: data: gap:; img-src * self 'unsafe-inline' blob: data: gap:; connect-src self * 'unsafe-inline' blob: data: gap:; frame-src * self blob: data: gap:;",
-
+            "devContentSecurityPolicy": "default-src * self blob: data: gap:; style-src * self 'unsafe-inline' blob: data: gap:; script-src * 'self' 'unsafe-eval' 'unsafe-inline' blob: data: gap:; object-src * 'self' blob: data: gap:; img-src * self 'unsafe-inline' blob: data: gap:; connect-src self * 'unsafe-inline' blob: data: gap:; frame-src * self blob: data: gap:;",
             "mainConfig": "./webpack.main.config.js",
             "renderer": {
               "config": "./webpack.renderer.config.js",
@@ -77,6 +76,7 @@
     "babel-loader": "^8.2.3",
     "css-loader": "^6.5.1",
     "electron": "16.0.5",
+    "file-loader": "^6.2.0",
     "node-loader": "^2.0.0",
     "style-loader": "^3.3.1"
   },
@@ -88,6 +88,7 @@
     "node-fetch": "^3.1.0",
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.4",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "use-sound": "^4.0.1"
   }
 }

@@ -76,4 +76,4 @@ function Calculator(props) {
   );
 }
 
-export { Calculator, MetarWindow };
+export default Calculator;

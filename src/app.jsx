@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import * as ReactDOM from "react-dom";
-import { Calculator, MetarWindow } from "./calculation.jsx";
+import Calculator from "./calculation.jsx";
 import Button from "react-bootstrap/Button";
-import Container from "react-bootstrap/Container";
 import Stack from "react-bootstrap/Stack";
 import "bootstrap/dist/css/bootstrap.min.css";
 import GetMetar from "./metar.jsx";
@@ -28,16 +27,9 @@ function EntryFields() {
     setCalculationShown(true);
   };
 
-  const handleInput = (e) => {
-    e.preventDefault();
-    if (e >= 0) {
-      return value;
-    }
-    return 0;
-  };
 
   return (
-    <Container className="cont-field">
+    <div className="cont-field">
       <div className="info">
         <Stack gap={3}>
           <legend>OAT (°C) </legend>
@@ -86,8 +78,7 @@ function EntryFields() {
           )}
         </Stack>
       </div>
-      <MetarWindow />
-    </Container>
+    </div>
   );
 }
 
